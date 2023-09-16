@@ -1,23 +1,393 @@
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <div class="image">
-      <img src="https://avatars.githubusercontent.com/u/87988671?s=400&u=df7f487e4554a66c330e3d4d38afc920ecb6d944&v=4" alt="Your Image">
-    </div>
-    <div class="content">
-      <h1>Vaibhav Singh</h1>
-      <div class="icons">
-        <a href="https://www.linkedin.com/in/vaibhav-singh-liferay/" target="_blank"><img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn"></a>
-        <a href="https://github.com/vaibhavsinghmq" target="_blank"><img src="https://img.icons8.com/fluency/48/github.png" alt="GitHub"></a>
-        <a href="resume.pdf" target="_blank"><img src="https://img.icons8.com/fluency/48/resume.png" alt="Resume"></a>
-      </div>
-    </div>
-  </div>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vaibhav SIngh Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+        body{
+            background-color: #000;
+            font-family: Helvetica, Arial,  sans-serif;
+        }
+
+        .header-image img {
+            max-width: 100%;
+            max-height: 210px;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .header-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #000;
+            color: #F0F0FF;
+        }
+
+        .banner {
+            margin-top: 10px;
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            color: #fff;
+            flex: 1;
+            border-radius: 5px;
+            background-color: rgba(0, 123, 255, 0.7);
+        }
+
+        .project{
+            margin-top: 10px;
+            padding: 10px;
+            padding: 5px;
+            background: #000
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            padding: 20;
+            flex: 1;
+        }
+    
+        
+        .card {
+            position: relative;
+            transition: transform 0.2s;
+            width: 350px; /* Set your desired width */
+            height: 400px; /* Set your desired height */
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px 0px rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-body{
+            background-color: #323237;
+            color: white;
+            padding: 1px;
+            height: 100px;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #323237;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 0.9;
+        }
+
+        .card-title,
+        .card-text {
+            text-align: center;
+        }
+        .card-text-heading{
+            text-align: left;
+            padding: 5px;
+        }
+
+        /* Ensure the image doesn't exceed the card width */
+        .card >img {
+            max-width: 100%;
+            height: 300px;
+        }
+
+
+    </style>
+
+
+  </head>
+  <body>
+    <div class="container">
+        <!-- Header-->
+         <div class="row header">
+             <div class="header-image col-md-6">
+                 <img src="https://avatars.githubusercontent.com/u/87988671?s=400&u=df7f487e4554a66c330e3d4d38afc920ecb6d944&v=4" alt="Vaibhav Singh">
+             </div>
+             <div class="header-content col-md-6">
+                 <div class="header-title"><h1>Vaibhav Singh</h1></div>
+                 <div class="header-link icons">
+                    <a href="https://www.linkedin.com/in/vaibhav-singh-liferay/" target="_blank"><img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://github.com/vaibhavsinghmq" target="_blank"><img src="https://img.icons8.com/fluency/48/github.png" alt="GitHub"></a>
+                    <a href="resume.pdf" target="_blank"><img src="https://img.icons8.com/fluency/48/resume.png" alt="Resume"></a>
+                 </div>
+                 <div class="header-tagline"><h2>Data Science Enthusiast</h2></div>
+             </div>
+         </div>
+
+         <div class="row text-justify" style="color:#fff">
+            <h3>About</h3>
+            <p>
+                Hi, I'm Vaibhav Singh, a Data Science Graduate from Macquarie University. I'm passionate about applying machine learning and data analysis to solve real-world problems and create value for businesses and society.
+
+At Truuth, I was responsible for implementing an anomaly detection model for user documents, using AWS,and Pytorch. I collaborate with cross-functional teams to ensure the successful deployment and operation of the model, and I continuously refine it based on performance and feedback. Previously, I worked as a Software Engineer at Saint Gobain and KPIT, where I led portal development and migration projects, using Liferay, SVN, and Jenkins. I also have experience in developing custom libraries, hooks, portlets, and message bus modules.
+
+I'm always eager to learn new skills and explore new domains, and I have completed multiple certifications in TensorFlow, dbt, and AWS. I'm also proficient in Python, Java, SQL, and R. I have a Bachelor's degree in Computer Science from the University of Mumbai, and I'm fluent in English, Hindi, and Marathi.
+
+I'm looking forward to connecting with other data science and technology enthusiasts and exchanging insights and ideas. I'm also open to new opportunities and collaborations that can help me grow as a professional and contribute to the advancement of the field. Feel free to reach out to me anytime. Please have a look on my projects :)
+            </p>
+         </div>
+
+
+         <!-- Part 2-->
+         <div class="row banner">
+             <h4> Data Analysis Projects</h4>
+         </div>
+         <div class="row project">
+
+            <a target ="_blank"  href="https://gist.github.com/vaibhavsinghmq/c437d7f9575c45093bbe95b15ecff9bd">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./RevenueNSW.jpeg" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">Unlocking Insights from NSW Penalty Notices using Tableau</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/Python-3.9-blue.svg">
+                                <img src="https://img.shields.io/badge/Tableau%20Public-Supported-blue.svg">
+                                <img src="https://img.shields.io/badge/CSV-Supported-green.svg">
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">Exploring revenue stream and Penalty trends in NSW</p>
+                                <ul>
+                                    <li>Created a Tableau public dashboard to shocase NSW Penalty revenue trends</li>
+                                    <li>Collected data from July 2017 till July 2023 from Revenue NSW website</li>
+                                    <li>Performed EDA on most common, expensive and rising offences carried out by residents</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a target ="_blank"  href="https://gist.github.com/vaibhavsinghmq/c437d7f9575c45093bbe95b15ecff9bd">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./whtsappchatanalyais.png" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">WhatsApp Chat Analysis using Streamlit and Python</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/Python-3.7-blue.svg">
+                                <img src="https://img.shields.io/badge/Streamlit-Supported-green.svg">
+                                <img src="https://img.shields.io/badge/Heroku-Deployed-brightgreen.svg">
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">Created an online website where user can upload chat and experience:</p>
+                                <ul>
+                                    <li>Explore message frequency by hour and day of the week.</li>
+                                    <li>View monthly activity trends.</li>
+                                    <li>Visualize sentiment analysis over time.</li>
+                                    <li>Identify frequently used emojis.</li>
+                                    <li>Analyze network interactions between users.</li>
+                                    <li>Filter analysis based on year and user.</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a target ="_blank"  href="https://gist.github.com/vaibhavsinghmq/c437d7f9575c45093bbe95b15ecff9bd">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./airflow-query.png" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">Build a Airflow data pipeline</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/Python-3.7-blue.svg">
+                                <img src="https://img.shields.io/badge/Airflow-Supported-blue.svg">
+                                <img src="https://img.shields.io/badge/Google%20BigQuery-Supported-blue.svg">
+                                <img src="https://img.shields.io/badge/Big%20Data-Supported-blue.svg">
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">Build an ETL pipeline to shows total unique visitors in Google BigQuery Ecommerce dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            
+            <a target ="_blank"  href="https://gist.github.com/vaibhavsinghmq/c437d7f9575c45093bbe95b15ecff9bd">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./sports-voucher.png" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">Sport Vouchers Program Analysis</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/Python-3.7-blue.svg">
+                                <img src="https://img.shields.io/badge/Jupyter-Notebook-orange.svg">
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">
+                                    <p class="card-text-heading">The goal of this Portfolio task is to explore data from the Federal Government Sport Vouchers program - this is a program that provides up to two $100 vouchers for kids to participate in organised sport</p>
+                                    <ul>
+                                        <li>Describe the distribution of vouchers by: LGA, Sport - which regions/sports stand out?</li>
+                                        <li>Are some sports more popular in different parts of the state?</li>
+                                        <li>Are any LGAs over/under represented in their use of vouchers?</li>
+                                        <li>Is there a relationship between any of the SEIFA measures and voucher use in an LGA?</li>
+                                    </ul>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a target ="_blank"  href="https://gist.github.com/vaibhavsinghmq/c437d7f9575c45093bbe95b15ecff9bd">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./cycling-data.png" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">Analysis of Cycling Data</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/Python-3.7-blue.svg">
+                                <img src="https://img.shields.io/badge/Jupyter-Notebook-orange.svg">
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">
+                                    <ul>
+                                        <li>What is the overall distance travelled for each of the rides? What are the average speeds etc. Provided a summary for each ride.</li>
+                                        <li>Compares the range of speeds for each ride, are time trials faster than road races?</li>
+                                        <li>Compared the speeds achieved in the two time trials (three years apart). As well as looking at the averages, checking where in the ride one or the other is faster.</li>
+                                    </ul>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+
+         </div>
+
+         <!-- Part 2-->
+         <div class="row banner">
+             <h4> Data Science Projects</h4>
+         </div>
+         <div class="row project">
+
+            <a target ="_blank"  href="#">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./photo-substitution.png" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">Anomaly Detection Model for Australian ID Photos: License & Passport</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/PyTorch-1.11.0-blue.svg">
+                                <img src="https://img.shields.io/badge/AWS-Hosted-orange.svg">
+                                <img src="https://img.shields.io/badge/Python-3.7-blue.svg">
+                                <img src="https://img.shields.io/badge/Shell%20Script-Yes-green.svg">
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">
+                                    <p class="card-text-heading">In this internship project I implemented a state of art anomaly detection model to get above 90% accuracy, on our custom dataset of Raw Passport and Driver's Licence picture.</p>
+                                    <ul>
+                                        <li>Captured and perspective transformed raw images using OpenCV</li>
+                                        <li>Setup notebook and shell script to clean dataset based on bluriness, clipping, fade</li>
+                                        <li>Increased dataset size for based on  brighness, contrast and shrpness incase of low numbers of sample</li>
+                                        <li>setup and train model muliple model on same image using the curated dataset and collate result into a notebook and predict authenticity score using Logistic regression</li>
+                                        <li>Share results with stakeholders based on Accuracy, FAR and FRR and custom threshold output </li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a  target ="_blank" href="https://github.com/MQCOMP2200-S2-2021/data-science-portfolio-vaibhavsinghmq/blob/main/Portfolio_3.ipynb">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./mobile-customer-churn.png" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">Mobile Customer Churn</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/Python-3.7-blue.svg">
+                                <img src="https://img.shields.io/badge/Jupyter-Notebook-orange.svg">
+                               
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">
+                                    <p class="card-text-heading">In this Portfolio task we had work with some (fake but realistic) data on Mobile Customer Churn. Churn is where a customer leaves the mobile provider</p>
+                                    <ul>
+                                        <li>Analyze and clean the dataset</li>
+                                        <li>Create visualization of features</li>
+                                        <li>Build a Logistic Regression model to predict churn</li>
+                                    </ul>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <a target ="_blank" href="https://gist.github.com/vaibhavsinghmq/c437d7f9575c45093bbe95b15ecff9bd">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="./social-media-network.png" class="card-img-top" alt="Image Alt Text">
+                        <div class="card-body">
+                            <h5 class="card-title">Using Neo4j and Python identify social media network within Tweets from X (formely Twitter)</h5>
+                            <p class="card-text">
+                                <img src="https://img.shields.io/badge/Python-3.7-blue.svg">
+                                <img src="https://img.shields.io/badge/Jupyter-Notebook-orange.svg">
+                                <img src="https://img.shields.io/badge/Neo4j%20Desktop-Supported-green.svg">
+                            </p>
+                            <div class="card-overlay">
+                                <p class="card-text">
+                                    <p class="card-text-heading">Find the most popular nodes using Degree Centrality from the 'FOLLOWS' subgraph. FOLLOWS is a relation between two nodes in above graph</p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+
+         </div>
+
+
+
+     </div><!-- E>O>C-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  </body>
 </html>
